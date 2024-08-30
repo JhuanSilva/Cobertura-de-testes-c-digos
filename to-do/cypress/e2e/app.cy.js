@@ -14,9 +14,13 @@ describe("Aplicação de lista de tarefas (To-do) - React", () => {
   context("Verificando elementos e estilos", () => {
     it("Deve existir elementos na tela", function () {
       cy.get("h1").should("exist").contains("To-Do");
+
       cy.get(".campo__texto").should("exist");
+
       cy.get(".campo__texto").should("not.have.value");
+
       cy.get(".campo__texto").click().should("have.focus");
+      
       cy.get(".botao").should("exist").and("have.text", "Adicionar");
     });
   });
